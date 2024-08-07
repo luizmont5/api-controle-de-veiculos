@@ -33,15 +33,21 @@ module.exports = {
     inserir: async(req, res) => {
         let json = {error:'', result:{}};
 
-        let modelo = req.body.modelo;
         let placa = req.body.placa;
+        let marca = req.body.marca;
+        let modelo = req.body.modelo;
+        let ano = req.body.ano;
+        let quilometragem = req.body.quilometragem;
 
         if (modelo && placa){
-            let CarroCodigo = await CarroService.inserir(modelo, placa);
+            let CarroCodigo = await CarroService.inserir(placa, marca,modelo,ano,quilometragem);
             json.result = {
                 codigo: CarroCodigo,
+                placa,
+                marca,
                 modelo,
-                placa
+                ano,
+                quilometragem
             };
         }else{
             json.error = 'Campos não enviados';
@@ -53,15 +59,19 @@ module.exports = {
         let json = {error:'', result:{}};
 
         let codigo = req.params.codigo;
-        let modelo = req.body.modelo;
         let placa = req.body.placa;
-
-        if (codigo && modelo && placa){
-            await CarroService.alterar(codigo, modelo, placa);
+        let marca = req.body.marca;
+        let modelo = req.body.modelo;
+        let ano = req.body.ano;
+        
+        if (codigo && placa && marca && modelo && ano){
+            await CarroService.alterar(codigo, placa, marca, modelo, ano);
             json.result = {
                 codigo,
+                placa,
+                marca,
                 modelo,
-                placa
+                ano
             };
         }else{
             json.error = 'Campos não enviados';

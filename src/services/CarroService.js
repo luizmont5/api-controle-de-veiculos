@@ -24,11 +24,11 @@ module.exports = {
             });
         });
     },
-    inserir: (modelo, placa)=> {
+    inserir: (placa, marca, modelo, ano, quilometragem)=> {
         return new Promise((aceito, rejeitado)=> {
 
-            db.query('INSERT INTO veiculos (modelo, placa) VALUES (?, ?)',
-                [modelo, placa],
+            db.query('INSERT INTO veiculos (placa, marca, modelo, ano, quilometragem ) VALUES (?, ?, ?, ?, ?)',
+                [placa, marca, modelo, ano, quilometragem],
                 (error, results)=>{
                     if(error){ rejeitado(error); return; }
                     aceito(results.insertCodigo); //insertId
@@ -36,10 +36,10 @@ module.exports = {
             );
         });
     },
-    alterar:(codigo, modelo, placa)=> {
+    alterar:(codigo, placa, marca, modelo, ano)=> {
         return new Promise((aceito, rejeitado)=> {
-            db.query('UPDATE veiculos SET modelo = ?, placa = ? WHERE codigo = ?',
-                [modelo, placa, codigo],
+            db.query('UPDATE veiculos SET placa = ? ,marca = ?, modelo = ?, ano = ? WHERE codigo = ?',
+                [placa, marca, modelo,ano , codigo],
                 (error, results) => {
                     if(error){ rejeitado(error); return; }
                     aceito(results);
