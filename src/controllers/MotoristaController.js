@@ -42,7 +42,7 @@ module.exports = {
         let cpf = req.body.cpf;
         let cnh = req.body.cnh;
        
-        if (nome && cpf){
+        if (nome && cpf && cnh){
             let MotCodigo = await MotoristaService.inserir(nome, cpf,cnh);
             json.result = {
                 codigo: MotCodigo,
