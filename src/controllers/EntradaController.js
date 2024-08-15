@@ -64,30 +64,34 @@ module.exports = {
         res.json(json);
     },
 
-    alterar: async(req, res) => {
-        let json = {error:'', result:{}};
-
-        let codigo = req.params.codigo;
+    alterar: async (req, res) => {
+        let json = { error: '', result: {} };
+    
+        let codigo = req.body.codigo;
         let veiculo = req.body.veiculo;
         let motorista = req.body.motorista;
         let data = req.body.data_hora;
         let quilometragem = req.body.quilometragem;
-        
-        if ( codigo && veiculo && motorista && data && quilometragem){
-            await EntradaService.alterar(codigo, veiculo, motorista, data, quilometragem);
-            json.result = {
-                codigo,
-                veiculo,
-                motorista,
-                data,
-                quilometragem
-                
-            };
-        }else{
+    
+        if (codigo && (veiculo || motorista || data || quilometragem)) {
+            try {
+                await EntradaService.alterar(codigo, veiculo, motorista, data, quilometragem);
+                json.result = {
+            
+                    veiculo,
+                    motorista,
+                    data,
+                    quilometragem
+                };
+            } catch (error) {
+                json.error = error.message; // Captura o erro vindo do service e envia a mensagem
+            }
+        } else {
             json.error = 'Campos não enviados';
         }
         res.json(json);
     },
+
     excluir: async(req, res) => {
         let json = {error:'', result:{}};
 

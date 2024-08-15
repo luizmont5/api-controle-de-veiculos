@@ -21,7 +21,7 @@ router.delete('/motorista/:id_mot', MotoristaController.excluir);
 router.get('/entradas', EntradaController.buscarTodos);
 router.get('/entrada/:id_in', EntradaController.buscarUm);
 router.post('/entrada', EntradaController.inserir);
-router.put('/entrada/:id_in', EntradaController.alterar);
+router.put('/entrada/alterar', EntradaController.alterar);
 router.delete('/entrada/:id_in', EntradaController.excluir);
 
 module.exports = router;
