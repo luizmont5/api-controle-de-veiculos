@@ -1,12 +1,15 @@
 import styles from "./Header.module.css";
+import {Link} from "react-router-dom";
 
 function Header(){
     return(
         <header className={styles.header}>
-            <span>Bypass</span>
+           <Link to="/">
+           <span>Bypass</span>
+           </Link>
+            
             <nav>
-                <a href='#'>Home</a>
-                
+                <Link to="/cadastro">Home</Link>
             </nav>
             </header>
     )
