@@ -4,12 +4,12 @@ import {Link} from "react-router-dom";
 function Header(){
     return(
         <header className={styles.header}>
-           <Link to="/">
-           <span>Bypass</span>
+           <Link to="/home">
+           <span>GMI Pass</span>
            </Link>
             
             <nav>
-                <Link to="/cadastro">Home</Link>
+                <Link to="/cadastro/veic">Home</Link>
             </nav>
             </header>
     )

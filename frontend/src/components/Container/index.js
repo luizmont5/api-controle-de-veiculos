@@ -2,10 +2,12 @@ import styles from "./Container.module.css";
 
 function Container({children}){
     return(
-        <section ClassName={styles.container}>
+        <section className={styles.container}>
             {children}
         </section>
     );
 }
 
 export default Container;
+
+//comentario so para alterar o arquivo
