@@ -1,5 +1,6 @@
 const CarroService = require('../services/CarroService');
 
+
 module.exports = {
     
     buscarTodos: async (req, res) => {
@@ -32,15 +33,17 @@ module.exports = {
 
     inserir: async(req, res) => {
         let json = {error:'', result:{}};
-
+    
         let placa = req.body.placa;
         let marca = req.body.marca;
         let modelo = req.body.modelo;
         let ano = req.body.ano;
         let quilometragem = req.body.quilometragem;
-
+    
+        console.log("Dados recebidos:", { placa, marca, modelo, ano, quilometragem });
+    
         if (modelo && placa){
-            let CarroCodigo = await CarroService.inserir(placa, marca,modelo,ano,quilometragem);
+            let CarroCodigo = await CarroService.inserir(placa, marca, modelo, ano, quilometragem);
             json.result = {
                 codigo: CarroCodigo,
                 placa,
@@ -54,6 +57,7 @@ module.exports = {
         }
         res.json(json);
     },
+    
 
     alterar: async(req, res) => {
         let json = {error:'', result:{}};

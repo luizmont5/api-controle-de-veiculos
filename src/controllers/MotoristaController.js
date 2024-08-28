@@ -42,6 +42,8 @@ module.exports = {
         let cpf = req.body.cpf;
         let cnh = req.body.cnh;
        
+        console.log("Dados recebidos:", { nome, cpf, cnh });
+
         if (nome && cpf && cnh){
             let MotCodigo = await MotoristaService.inserir(nome, cpf,cnh);
             json.result = {
