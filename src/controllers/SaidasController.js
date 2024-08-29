@@ -44,7 +44,8 @@ module.exports = {
         let motorista = req.body.motorista;
         let data = req.body.data_hora;
         let quilometragem = req.body.quilometragem;
-    
+        console.log("Dados recebidos:", { veiculo, motorista, data, quilometragem });
+
         if (veiculo && motorista && data && quilometragem) {
             try {
                 let EntCodigo = await SaidaService.inserir(veiculo, motorista, data, quilometragem);

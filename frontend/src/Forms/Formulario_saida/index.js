@@ -1,52 +1,94 @@
+import { useState } from 'react';
 import styles from "../../Forms/Form.module.css";
 
 function Formulario_saida() {
+    const [veiculo, setVeiculo] = useState('');
+    const [motorista, setMotorista] = useState('');
+    const [data_hora, setData] = useState('');
+    const [quilometragem, setQuilometragem] = useState('');
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const SaidData = {
+            veiculo,
+            motorista,
+            data_hora,
+            quilometragem,
+        };
+
+        try {
+            const response = await fetch('http://localhost:3036/api/saida', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(SaidData),
+            });
+
+            const result = await response.json();
+
+            if (result.error) {
+                alert('Erro: ' + result.error);
+            } else {
+                alert('Saída cadastrada com sucesso!');
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar os dados:', error);
+            alert('Erro ao cadastrar a saída.');
+        }
+    };
    
-    return(
+    return (
         <section className={styles.container}>
             <h2>Registro de Saída:</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Veiculo:</label>
+                    <label>Código do Veiculo:</label>
                     <input
                         type="text"
-                        placeholder="Ex.: Mobi"
+                        placeholder="Ex.: 18"
                         required="required"
+                        value={veiculo}
+                        onChange={e => setVeiculo(e.target.value)}
                     />
                 </div>
                 <div>
-                <label>Motorista:</label>
+                    <label>Código do veiculo:</label>
                     <input
                         type="text"
-                        placeholder="Ex.: Luiz Fernando"
+                        placeholder="Ex.: 15"
                         required="required"
-                    /> 
+                        value={motorista}
+                        onChange={e => setMotorista(e.target.value)}
+                    />
                 </div>
                 <div>
+                    <label>Data e Hora:</label>
+                    <input
+                        type="text"
+                        placeholder="Ex.: 2024-12-12 12:00 "
+                        required="required"
+                        value={data_hora}
+                        onChange={e => setData(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label>Quilometragem de Entrada:</label>
+                    <input
+                        type="text"
+                        placeholder="Ex.: 100.000 "
+                        required="required"
+                        value={quilometragem}
+                        onChange={e => setQuilometragem(e.target.value)}
+                    />
 
                 </div>
                 <div>
-                <label>data e hora:</label>
-                    <input
-                        type="date_time"
-                        placeholder="Ex.: 01/01/2024"
-                        required="required"
-                    /> 
-                </div>
-                <div>
-
-                <label>quilometragem:</label>
-                    <input
-                        type="int"
-                        placeholder="Ex.: 100.000"
-                        required="required"
-                    /> 
-                </div>
-                <div>
-                    <button>registrar</button>
+                    <button type="submit">Cadastrar</button>
                 </div>
             </form>
-           
         </section>
     );
 }
