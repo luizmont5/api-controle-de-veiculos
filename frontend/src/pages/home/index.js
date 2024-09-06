@@ -1,4 +1,5 @@
 import Container from "../../components/Container";
+import Display from "../../components/Display";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -8,8 +9,7 @@ function Home() {
   <> 
     <Header />
     <Container>
-    <h1>Testando </h1>
-    <p1>testando mais uma vez</p1>
+    <Display/>
     </Container>
     <Footer/>
     </>

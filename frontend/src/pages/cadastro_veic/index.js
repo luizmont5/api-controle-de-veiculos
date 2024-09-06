@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import Formulario_carro from "../../Forms/Formulario_carro";
+import Formulario_carro from "../../Forms/Cadastro/Formulario_carro";
 
 
 
@@ -9,7 +9,7 @@ function Cadastro_veiculo() {
   return (
   <> 
     
-    <h1> Cadastro</h1>
+    
    <Header />
     <Container>
     <Formulario_carro />

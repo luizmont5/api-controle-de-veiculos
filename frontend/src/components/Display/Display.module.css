@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
+  gap: 20px; /* Espaçamento entre os botões */
+  margin-top: 30px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f12b2b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px; /* Define a largura dos botões */
+}
+
+.button:hover {
+  background-color: #f44336;
+}
+
+.button:active {
+  background-color: #f12b2b;
+}

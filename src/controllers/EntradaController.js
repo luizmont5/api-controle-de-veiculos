@@ -74,7 +74,8 @@ module.exports = {
         let motorista = req.body.motorista;
         let data = req.body.data_hora;
         let quilometragem = req.body.quilometragem;
-    
+        
+        console.log("Dados recebidos:", { codigo,veiculo, motorista, data, quilometragem });
         if (codigo && (veiculo || motorista || data || quilometragem)) {
             try {
                 await EntradaService.alterar(codigo, veiculo, motorista, data, quilometragem);

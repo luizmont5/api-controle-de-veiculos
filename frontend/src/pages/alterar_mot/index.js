@@ -1,17 +1,17 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import Formulario_entrada from "../../Forms/Cadastro/Formulario_entrada";
+import Alterar_mot from "../../Forms/Alterar/Alterar_mot";
 
 
-function Registro_in() {
+
+
+function Alterar_motorista() {
   return (
   <> 
-    
-    
    <Header />
     <Container>
-    <Formulario_entrada />
+    <Alterar_mot />
     </Container>
     <Footer />
     </>
@@ -19,4 +19,4 @@ function Registro_in() {
   
 }
 
-export default Registro_in;
+export default Alterar_motorista;

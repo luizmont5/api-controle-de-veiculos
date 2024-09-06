@@ -62,12 +62,13 @@ module.exports = {
     alterar: async(req, res) => {
         let json = {error:'', result:{}};
 
-        let codigo = req.params.codigo;
+        let codigo = req.body.codigo;
         let placa = req.body.placa;
         let marca = req.body.marca;
         let modelo = req.body.modelo;
         let ano = req.body.ano;
         
+        console.log("Dados recebidos:", { codigo,placa, marca, modelo, ano});
         if (codigo && placa && marca && modelo && ano){
             await CarroService.alterar(codigo, placa, marca, modelo, ano);
             json.result = {

@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import Formulario_usuario from "../../Forms/Formulario_usuario";
+import Formulario_usuario from "../../Forms/Cadastro/Formulario_usuario";
 
 
 
@@ -11,7 +11,7 @@ function Login() {
   return (
   <> 
     
-    <h1> Login</h1>
+    
    <Header />
     <Container>
     <Formulario_usuario />

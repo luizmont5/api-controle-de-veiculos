@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from "../../Forms/Form.module.css";
+import styles from "../../../Forms/Form.module.css";
 
-function Formulario_saida() {
+function Formulario_entrada() {
     const [veiculo, setVeiculo] = useState('');
     const [motorista, setMotorista] = useState('');
     const [data_hora, setData] = useState('');
@@ -10,7 +10,7 @@ function Formulario_saida() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const SaidData = {
+        const entrData = {
             veiculo,
             motorista,
             data_hora,
@@ -18,12 +18,12 @@ function Formulario_saida() {
         };
 
         try {
-            const response = await fetch('http://localhost:3036/api/saida', {
+            const response = await fetch('http://localhost:3036/api/entrada', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(SaidData),
+                body: JSON.stringify(entrData),
             });
 
             const result = await response.json();
@@ -31,21 +31,21 @@ function Formulario_saida() {
             if (result.error) {
                 alert('Erro: ' + result.error);
             } else {
-                alert('Saída cadastrada com sucesso!');
+                alert('Entrada cadastrada com sucesso!');
             }
 
         } catch (error) {
             console.error('Erro ao enviar os dados:', error);
-            alert('Erro ao cadastrar a saída.');
+            alert('Erro ao cadastrar a entrada.');
         }
     };
    
     return (
         <section className={styles.container}>
-            <h2>Registro de Saída:</h2>
+            <h2>Registro de Entrada:</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Código do Veiculo:</label>
+                    <label> Código do Veiculo:</label>
                     <input
                         type="text"
                         placeholder="Ex.: 18"
@@ -55,10 +55,10 @@ function Formulario_saida() {
                     />
                 </div>
                 <div>
-                    <label>Código do veiculo:</label>
+                    <label>Código do Motorista:</label>
                     <input
                         type="text"
-                        placeholder="Ex.: 15"
+                        placeholder="Ex.: 1"
                         required="required"
                         value={motorista}
                         onChange={e => setMotorista(e.target.value)}
@@ -93,4 +93,4 @@ function Formulario_saida() {
     );
 }
 
-export default Formulario_saida;
+export default Formulario_entrada;

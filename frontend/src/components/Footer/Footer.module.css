@@ -1,8 +1,9 @@
 .footer {
-    position: absolute;
+    position:relative;
     
     width: 100%;
     display: flex;
+    bottom: auto;
     align-items: center;
     justify-content: center;
     background-color: #ff2020;

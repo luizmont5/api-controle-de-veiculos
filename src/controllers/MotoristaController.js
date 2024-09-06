@@ -61,15 +61,16 @@ module.exports = {
     alterar: async(req, res) => {
         let json = {error:'', result:{}};
 
-        let codigo = req.params.id_mot;
+        let id_mot = req.body.id_mot;
         let nome = req.body.nome;
         let cpf = req.body.cpf;
         let cnh = req.body.cnh;
         
-        if (codigo && nome && cpf && cnh){
-            await MotoristaService.alterar(codigo, nome, cpf, cnh);
+        console.log("Dados recebidos:", { id_mot,nome, cpf, cnh });
+        if (id_mot && nome && cpf && cnh){
+            await MotoristaService.alterar(id_mot, nome, cpf, cnh);
             json.result = {
-                codigo,
+                id_mot,
                 nome,
                 cpf,
                 cnh,

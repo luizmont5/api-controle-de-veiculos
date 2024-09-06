@@ -11,13 +11,13 @@ const SaidasController = require('./controllers/SaidasController');
 router.get('/carros', CarroController.buscarTodos);
 router.get('/carro/:codigo', CarroController.buscarUm);
 router.post('/carro', CarroController.inserir);
-router.put('/carro/:codigo', CarroController.alterar);
+router.put('/carro/alterar', CarroController.alterar);
 router.delete('/carro/:codigo', CarroController.excluir);
 
 router.get('/motoristas', MotoristaController.buscarTodos);
 router.get('/motorista/:id_mot', MotoristaController.buscarUm);
 router.post('/motorista', MotoristaController.inserir);
-router.put('/motorista/:id_mot', MotoristaController.alterar);
+router.put('/motorista/alterar', MotoristaController.alterar);
 router.delete('/motorista/:id_mot', MotoristaController.excluir);
 
 router.get('/entradas', EntradaController.buscarTodos);
