@@ -9,6 +9,9 @@ import Alterar_veiculo from "./pages/alterar_veic";
 import Alterar_motorista from "./pages/alterar_mot";
 import Alterar_entrada from "./pages/alterar_ent";
 import Alterar_saida from "./pages/alterar_out";
+import Exibir_veic from "./pages/exibir_veiculo";
+
+
 function AppRoutes(){
     return(
         <BrowserRouter>
@@ -23,6 +26,7 @@ function AppRoutes(){
                 <Route path="/alterar/mot"element={<Alterar_motorista />}></Route>
                 <Route path="/alterar/entr"element={<Alterar_entrada />}></Route>
                 <Route path="/alterar/said"element={<Alterar_saida />}></Route>
+                <Route path="/exibir"element={<Exibir_veic/>}></Route>
             </Routes>
         
         </BrowserRouter>

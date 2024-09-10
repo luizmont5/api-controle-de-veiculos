@@ -16,6 +16,7 @@ function Display() {
       <button className={styles.button} onClick={() => navigate('/alterar/mot')}>Alterar Motorista</button>
       <button className={styles.button} onClick={() => navigate('/alterar/entr')}>Alterar Entrada</button>
       <button className={styles.button} onClick={() => navigate('/alterar/said')}>Alterar Saída</button>
+      <button className={styles.button} onClick={() => navigate('/exibir')}>Exibir Veículos</button>
     </div>
   );
 };

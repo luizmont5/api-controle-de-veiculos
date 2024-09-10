@@ -11,7 +11,11 @@ module.exports = {
         for(let i in veiculos){
             json.result.push({
                 codigo: veiculos[i].codigo,
-                descricao: veiculos[i].modelo
+                descricao: veiculos[i].modelo,
+                marca: veiculos[i].marca,
+                ano: veiculos[i].ano,
+                quilometragem: veiculos[i].quilometragem,
+                placa: veiculos[i].placa
             });
         }
 
