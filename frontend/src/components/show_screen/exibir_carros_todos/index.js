@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../show_screen.css';
+
 
 const VeiculosList = () => {
   const [veiculos, setVeiculos] = useState([]);
@@ -41,12 +43,12 @@ const VeiculosList = () => {
       <table>
         <thead>
           <tr>
-            <th>Código</th>
-            <th>Placa</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Quilometragem</th>
+            <th>Código:</th>
+            <th>Placa:</th>
+            <th>Marca:</th>
+            <th>Modelo:</th>
+            <th>Ano:</th>
+            <th>Quilometragem:</th>
           </tr>
         </thead>
         <tbody>

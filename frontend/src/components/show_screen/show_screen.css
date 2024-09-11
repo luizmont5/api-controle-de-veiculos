@@ -1,0 +1,34 @@
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre bordas da tabela */
+    margin: 20px 0; /* Espaço acima e abaixo da tabela */
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+  
+  table thead th {
+    background-color: #f12b2b; /* Cor de fundo para o cabeçalho */
+    color: white; /* Cor do texto no cabeçalho */
+    padding: 12px; /* Espaçamento dentro das células do cabeçalho */
+    border: 1px solid #ddd; /* Borda para o cabeçalho */
+  }
+  
+  table tbody td {
+    padding: 12px; /* Espaçamento dentro das células de dados */
+    border: 1px solid #ddd; /* Borda para as células de dados */
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor de fundo alternada para linhas pares */
+  }
+  
+  /* Estilo para o título */
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  

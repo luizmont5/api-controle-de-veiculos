@@ -9,7 +9,7 @@ function Header(){
            </Link>
             
             <nav>
-                <Link to="/cadastro/veic">Home</Link>
+                <Link to="/home">Home</Link>
             </nav>
             </header>
     )

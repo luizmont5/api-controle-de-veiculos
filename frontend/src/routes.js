@@ -10,6 +10,9 @@ import Alterar_motorista from "./pages/alterar_mot";
 import Alterar_entrada from "./pages/alterar_ent";
 import Alterar_saida from "./pages/alterar_out";
 import Exibir_veic from "./pages/exibir_veiculo";
+import Exibir_moto from "./pages/exibir_motorista";
+import Exibir_entr from "./pages/exibir_entrada";
+import Exibir_said from "./pages/exibir_saida";
 
 
 function AppRoutes(){
@@ -27,6 +30,9 @@ function AppRoutes(){
                 <Route path="/alterar/entr"element={<Alterar_entrada />}></Route>
                 <Route path="/alterar/said"element={<Alterar_saida />}></Route>
                 <Route path="/exibir"element={<Exibir_veic/>}></Route>
+                <Route path="/exibir/motoristas"element={<Exibir_moto/>}></Route>
+                <Route path="/exibir/entradas"element={<Exibir_entr/>}></Route>
+                <Route path="/exibir/saidas"element={<Exibir_said/>}></Route>
             </Routes>
         
         </BrowserRouter>

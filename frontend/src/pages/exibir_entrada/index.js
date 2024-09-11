@@ -1,20 +1,20 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import VeiculosList from "../../components/show_screen/exibir_carros_todos";
+import EntradasList from "../../components/show_screen/exibir_entradas_todos";
 
 
 
 
 
-function Exibir_veic() {
+function Exibir_entr() {
   return (
   <> 
     
     
    <Header />
     <Container>
-    <VeiculosList/>
+    <EntradasList/>
     </Container>
     <Footer />
     </>
@@ -22,4 +22,4 @@ function Exibir_veic() {
   
 }
 
-export default Exibir_veic;
+export default Exibir_entr;
