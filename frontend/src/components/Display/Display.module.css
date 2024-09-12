@@ -1,13 +1,13 @@
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: first baseline;
-  gap: 20px; /* Espaçamento entre os botões */
+  flex-wrap: wrap; /* Permite que os botões "quebrem" de linha */
+  justify-content: center; /* Centraliza o conteúdo */
+  gap: 20px; 
   margin-top: 30px;
 }
 
 .button {
+  flex: 1 1 300px; /* Garante que os botões tenham 300px de largura e se ajustem ao tamanho da tela */
   padding: 10px 20px;
   font-size: 16px;
   background-color: #f12b2b;
@@ -16,7 +16,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 200px; /* Define a largura dos botões */
+  height: 50px;
 }
 
 .button:hover {

@@ -2,8 +2,23 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../show_screen.css';
 
+// Função para formatar a data no formato dia/mês/ano 00:00:00
+const formatarData = (dataISO) => {
+  const data = new Date(dataISO);
+
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0'); // Meses começam do zero
+  const ano = data.getFullYear();
+
+  const horas = String(data.getHours()).padStart(2, '0');
+  const minutos = String(data.getMinutes()).padStart(2, '0');
+  const segundos = String(data.getSeconds()).padStart(2, '0');
+
+  return `${dia}/${mes}/${ano} ${horas}:${minutos}:${segundos}`;
+};
+
 const EntradasList = () => {
-  const [entradas, setentradas] = useState([]);
+  const [entradas, setEntradas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -12,13 +27,13 @@ const EntradasList = () => {
       const response = await axios.get('http://localhost:3036/api/entradas');  // Ajuste para a URL correta
       console.log(response.data);
       if (response.data && response.data.result) {
-        setentradas(response.data.result);
+        setEntradas(response.data.result);
       } else {
         setError('Erro: Estrutura de dados inesperada.');
       }
     } catch (error) {
-      console.error('Erro ao buscar dados das Entradas', error);
-      setError('Erro ao buscar dados das Entradas');
+      console.error('Erro ao buscar dados das entradas', error);
+      setError('Erro ao buscar dados das entradas');
     } finally {
       setLoading(false);
     }
@@ -52,7 +67,7 @@ const EntradasList = () => {
         <tbody>
           {entradas.map((entrada) => (
             <tr key={entrada.codigo}>
-              <td>{entrada.data}</td>
+              <td>{formatarData(entrada.data)}</td> {/* Formatação da data */}
               <td>{entrada.codigo}</td>
               <td>{entrada.veiculo}</td>
               <td>{entrada.motorista}</td>
