@@ -20,6 +20,8 @@ function Display() {
       <button className={styles.button} onClick={() => navigate('/exibir/motoristas')}>Exibir Motoristas</button>
       <button className={styles.button} onClick={() => navigate('/exibir/entradas')}>Exibir Entradas</button>
       <button className={styles.button} onClick={() => navigate('/exibir/saidas')}>Exibir Saídas</button>
+      <button className={styles.button} onClick={() => navigate('/remover/carro')}>Remover veículo</button>
+      <button className={styles.button} onClick={() => navigate('/remover/entrada')}>Remover entrada</button>
     </div>
   );
 };

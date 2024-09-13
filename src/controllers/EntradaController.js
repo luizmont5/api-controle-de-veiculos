@@ -98,7 +98,7 @@ module.exports = {
     excluir: async(req, res) => {
         let json = {error:'', result:{}};
 
-        await EntradaService.excluir(req.params.id_in);
+        await EntradaService.excluir(req.body.id_in);
         
         res.json(json);
     },

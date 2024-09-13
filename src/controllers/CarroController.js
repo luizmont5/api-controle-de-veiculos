@@ -89,8 +89,8 @@ module.exports = {
     },
     excluir: async(req, res) => {
         let json = {error:'', result:{}};
-
-        await CarroService.excluir(req.params.codigo);
+        let codigo = req.body.codigo;
+        await CarroService.excluir(codigo);
         
         res.json(json);
     },

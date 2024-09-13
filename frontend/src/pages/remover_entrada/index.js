@@ -1,15 +1,15 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import Formulario_saida from "../../Forms/Cadastro/Formulario_saida";
+import Remover_Entrada from "../../components/remove/remove_entradas";
 
 
-function Registro_out() {
+function Remover_entri() {
   return (
   <> 
    <Header />
     <Container>
-    <Formulario_saida />
+    <Remover_Entrada/>
     </Container>
     <Footer />
     </>
@@ -17,4 +17,4 @@ function Registro_out() {
   
 }
 
-export default Registro_out;
+export default Remover_entri;

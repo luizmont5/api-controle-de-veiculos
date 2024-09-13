@@ -13,6 +13,8 @@ import Exibir_veic from "./pages/exibir_veiculo";
 import Exibir_moto from "./pages/exibir_motorista";
 import Exibir_entr from "./pages/exibir_entrada";
 import Exibir_said from "./pages/exibir_saida";
+import Remover_veiculo from "./pages/remover_carro";
+import Remover_entri from "./pages/remover_entrada";
 
 
 function AppRoutes(){
@@ -33,6 +35,8 @@ function AppRoutes(){
                 <Route path="/exibir/motoristas"element={<Exibir_moto/>}></Route>
                 <Route path="/exibir/entradas"element={<Exibir_entr/>}></Route>
                 <Route path="/exibir/saidas"element={<Exibir_said/>}></Route>
+                <Route path="/remover/carro"element={<Remover_veiculo/>}></Route>
+                <Route path="/remover/entrada"element={<Remover_entri/>}></Route>
             </Routes>
         
         </BrowserRouter>

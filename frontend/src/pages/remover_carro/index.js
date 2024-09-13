@@ -1,15 +1,15 @@
 import Header from "../../components/Header";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
-import Formulario_saida from "../../Forms/Cadastro/Formulario_saida";
+import Remover_carro from "../../components/remove/remove_carro";
 
 
-function Registro_out() {
+function Remover_veiculo() {
   return (
   <> 
    <Header />
     <Container>
-    <Formulario_saida />
+    <Remover_carro/>
     </Container>
     <Footer />
     </>
@@ -17,4 +17,4 @@ function Registro_out() {
   
 }
 
-export default Registro_out;
+export default Remover_veiculo;

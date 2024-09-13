@@ -12,25 +12,25 @@ router.get('/carros', CarroController.buscarTodos);
 router.get('/carro/:codigo', CarroController.buscarUm);
 router.post('/carro', CarroController.inserir);
 router.put('/carro/alterar', CarroController.alterar);
-router.delete('/carro/:codigo', CarroController.excluir);
+router.delete('/carro/remove', CarroController.excluir);
 
 router.get('/motoristas', MotoristaController.buscarTodos);
 router.get('/motorista/:id_mot', MotoristaController.buscarUm);
 router.post('/motorista', MotoristaController.inserir);
 router.put('/motorista/alterar', MotoristaController.alterar);
-router.delete('/motorista/:id_mot', MotoristaController.excluir);
+router.delete('/motorista/remove', MotoristaController.excluir);
 
 router.get('/entradas', EntradaController.buscarTodos);
 router.get('/entrada/:id_in', EntradaController.buscarUm);
 router.post('/entrada', EntradaController.inserir);
 router.put('/entrada/alterar', EntradaController.alterar);
-router.delete('/entrada/:id_in', EntradaController.excluir);
+router.delete('/entrada/remove', EntradaController.excluir);
 
 router.get('/saidas', SaidasController.buscarTodos);
 router.get('/saida/:id_out', SaidasController.buscarUm);
 router.post('/saida', SaidasController.inserir);
 router.put('/saida/alterar', SaidasController.alterar);
-router.delete('/saida/:id_out', SaidasController.excluir);
+router.delete('/saida/remove', SaidasController.excluir);
 
 module.exports = router;
 

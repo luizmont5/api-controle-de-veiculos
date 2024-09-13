@@ -68,7 +68,7 @@ function Formulario_entrada() {
                     <label>Data e Hora:</label>
                     <input
                         type="text"
-                        placeholder="Ex.: 2024-12-12 12:00 "
+                        placeholder="Ex.: 12-12-2024 12:00 "
                         required="required"
                         value={data_hora}
                         onChange={e => setData(e.target.value)}

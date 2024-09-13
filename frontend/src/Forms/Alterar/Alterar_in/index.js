@@ -81,7 +81,7 @@ function Alterar_in() {
                     <label>Data:</label>
                     <input
                         type="text"
-                        placeholder="Ex.: 2020-10-05"
+                        placeholder="Ex.: 12-12-2024 12:00"
                         required="required"
                         value={data_hora}
                         onChange={e => setdata_hora(e.target.value)}
