@@ -95,11 +95,14 @@ module.exports = {
         });
     },
 
-    excluir: (codigo) => {
-        return new Promise((aceito, rejeitado) => {
-            db.query('DELETE FROM saidas WHERE id_out = ?', [codigo], (error, results) => {
-                if (error) { rejeitado(error); return; }
-                aceito(results);
+    excluir: (id_mot) => {
+        return new Promise((resolve, reject) => {
+            db.query('DELETE FROM motoristas WHERE id_mot = ?', [id_mot], (error, results) => {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(results);  // Retorna o resultado da operação de exclusão
             });
         });
     }

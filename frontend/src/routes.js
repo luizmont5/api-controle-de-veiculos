@@ -16,6 +16,9 @@ import Exibir_said from "./pages/exibir_saida";
 import Remover_veiculo from "./pages/remover_carro";
 import Remover_entri from "./pages/remover_entrada";
 
+import Remover_motor from "./pages/remover_motorista";
+import Remover_Said from "./pages/remover_saida";
+
 
 function AppRoutes(){
     return(
@@ -37,6 +40,8 @@ function AppRoutes(){
                 <Route path="/exibir/saidas"element={<Exibir_said/>}></Route>
                 <Route path="/remover/carro"element={<Remover_veiculo/>}></Route>
                 <Route path="/remover/entrada"element={<Remover_entri/>}></Route>
+                <Route path="/remover/saida"element={<Remover_Said/>}></Route>
+                <Route path="/remover/motorista"element={<Remover_motor/>}></Route>
             </Routes>
         
         </BrowserRouter>

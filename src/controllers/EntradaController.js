@@ -95,13 +95,30 @@ module.exports = {
         res.json(json);
     },
 
-    excluir: async(req, res) => {
-        let json = {error:'', result:{}};
-
-        await EntradaService.excluir(req.body.id_in);
-        
+    excluir: async (req, res) => {
+        let json = { error: '', result: {} };
+    
+        const { codigo } = req.body;  // Aqui garantimos que o código recebido seja o campo correto
+    
+        if (codigo) {
+            try {
+                let result = await EntradaService.excluir(codigo);  // Passamos o campo `codigo` aqui
+    
+                if (result.affectedRows > 0) {
+                    json.result = 'Entrada removida com sucesso!';
+                } else {
+                    json.error = 'Entrada não encontrada.';
+                }
+            } catch (error) {
+                json.error = 'Erro ao remover a entrada: ' + error.message;
+            }
+        } else {
+            json.error = 'Código não fornecido.';
+        }
+    
         res.json(json);
     },
+    
 }
 
 

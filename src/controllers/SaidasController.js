@@ -1,3 +1,4 @@
+const SaidasService = require('../services/SaidasService');
 const SaidaService = require('../services/SaidasService');
 
 module.exports = {
@@ -94,11 +95,27 @@ module.exports = {
         res.json(json);
     },
 
-    excluir: async(req, res) => {
-        let json = {error:'', result:{}};
-
-        await SaidaService.excluir(req.params.id_out);
-        
+    excluir: async (req, res) => {
+        let json = { error: '', result: {} };
+    
+        const { codigo } = req.body;  // Aqui garantimos que o código recebido seja o campo correto
+    
+        if (codigo) {
+            try {
+                let result = await SaidasService.excluir(codigo);  // Passamos o campo `codigo` aqui
+    
+                if (result.affectedRows > 0) {
+                    json.result = 'Saída removida com sucesso!';
+                } else {
+                    json.error = 'Saída não encontrada.';
+                }
+            } catch (error) {
+                json.error = 'Erro ao remover a Saída: ' + error.message;
+            }
+        } else {
+            json.error = 'Código não fornecido.';
+        }
+    
         res.json(json);
     },
 }

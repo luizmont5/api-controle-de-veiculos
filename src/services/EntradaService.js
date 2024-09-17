@@ -99,8 +99,9 @@ module.exports = {
         return new Promise((aceito, rejeitado) => {
             db.query('DELETE FROM entradas WHERE id_in = ?', [codigo], (error, results) => {
                 if (error) { rejeitado(error); return; }
-                aceito(results);
+                aceito(results);  // Retorna os resultados da operação de exclusão
             });
         });
     }
+    
 };

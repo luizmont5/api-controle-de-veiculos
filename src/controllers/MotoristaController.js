@@ -82,11 +82,19 @@ module.exports = {
     },
     excluir: async(req, res) => {
         let json = {error:'', result:{}};
-
-        await MotoristaService.excluir(req.params.id_mot);
-        
+    
+        const id_mot = req.body.id_mot; // Certifica-se de que o identificador está correto
+    
+        if (id_mot) {
+            await MotoristaService.excluir(id_mot);
+            json.result = "Motorista removido com sucesso!";
+        } else {
+            json.error = 'ID do motorista não fornecido';
+        }
+    
         res.json(json);
-    },
+    }
+    
 }
 
 

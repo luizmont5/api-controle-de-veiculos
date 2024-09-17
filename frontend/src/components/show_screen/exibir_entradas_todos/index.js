@@ -58,7 +58,7 @@ const EntradasList = () => {
         <thead>
           <tr>
             <th>Data e Hora:</th>
-            <th>Código de Saída:</th>
+            <th>Código de Entrada:</th>
             <th>Código do Veículo:</th>
             <th>Código do Motorista:</th>
             <th>Quilometragem de Entrada:</th>

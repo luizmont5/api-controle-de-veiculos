@@ -8,20 +8,22 @@ function Display() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.button} onClick={() => navigate('/cadastro/veic')}>Cadastro veículos</button>
-      <button className={styles.button} onClick={() => navigate('/cadastro/mot')}>Cadastro Motoristas</button>
-      <button className={styles.button} onClick={() => navigate('/registro/in')}>Registrar Entrada</button>
-      <button className={styles.button} onClick={() => navigate('/registro/out')}>Registrar Saída</button>
-      <button className={styles.button} onClick={() => navigate('/alterar/carro')}>Alterar veículo</button>
-      <button className={styles.button} onClick={() => navigate('/alterar/mot')}>Alterar Motorista</button>
-      <button className={styles.button} onClick={() => navigate('/alterar/entr')}>Alterar Entrada</button>
-      <button className={styles.button} onClick={() => navigate('/alterar/said')}>Alterar Saída</button>
-      <button className={styles.button} onClick={() => navigate('/exibir')}>Exibir Veículos</button>
-      <button className={styles.button} onClick={() => navigate('/exibir/motoristas')}>Exibir Motoristas</button>
-      <button className={styles.button} onClick={() => navigate('/exibir/entradas')}>Exibir Entradas</button>
-      <button className={styles.button} onClick={() => navigate('/exibir/saidas')}>Exibir Saídas</button>
-      <button className={styles.button} onClick={() => navigate('/remover/carro')}>Remover veículo</button>
-      <button className={styles.button} onClick={() => navigate('/remover/entrada')}>Remover entrada</button>
+    <button className={styles.button} onClick={() => navigate('/cadastro/veic')}>Cadastro veículos</button>
+    <button className={styles.button} onClick={() => navigate('/alterar/carro')}>Alterar veículo</button>
+    <button className={styles.button} onClick={() => navigate('/exibir')}>Exibir Veículos</button>
+    <button className={styles.button} onClick={() => navigate('/remover/carro')}>Remover veículo</button>
+    <button className={styles.button} onClick={() => navigate('/cadastro/mot')}>Cadastro Motoristas</button>
+    <button className={styles.button} onClick={() => navigate('/alterar/mot')}>Alterar Motorista</button>
+    <button className={styles.button} onClick={() => navigate('/exibir/motoristas')}>Exibir Motoristas</button>
+    <button className={styles.button} onClick={() => navigate('/remover/motorista')}>Remover motorista</button>
+    <button className={styles.button} onClick={() => navigate('/registro/in')}>Registrar Entrada</button>
+    <button className={styles.button} onClick={() => navigate('/alterar/entr')}>Alterar Entrada</button>      
+    <button className={styles.button} onClick={() => navigate('/exibir/entradas')}>Exibir Entradas</button>
+    <button className={styles.button} onClick={() => navigate('/remover/entrada')}>Remover entrada</button>
+    <button className={styles.button} onClick={() => navigate('/registro/out')}>Registrar Saída</button>
+    <button className={styles.button} onClick={() => navigate('/alterar/said')}>Alterar Saída</button>
+    <button className={styles.button} onClick={() => navigate('/exibir/saidas')}>Exibir Saídas</button>
+    <button className={styles.button} onClick={() => navigate('/remover/saida')}>Remover saída</button>
     </div>
   );
 };
