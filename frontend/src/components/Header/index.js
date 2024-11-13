@@ -5,7 +5,7 @@ function Header(){
     return(
         <header className={styles.header}>
            <Link to="/home">
-           <span>GMI Pass</span>
+           <span>Log Pass</span>
            </Link>
             
             <nav>

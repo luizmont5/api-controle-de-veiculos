@@ -15,7 +15,6 @@ import Exibir_entr from "./pages/exibir_entrada";
 import Exibir_said from "./pages/exibir_saida";
 import Remover_veiculo from "./pages/remover_carro";
 import Remover_entri from "./pages/remover_entrada";
-
 import Remover_motor from "./pages/remover_motorista";
 import Remover_Said from "./pages/remover_saida";
 

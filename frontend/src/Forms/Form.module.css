@@ -44,7 +44,7 @@
 }
 
 .container button {
-    background-color: #f12b2b;
+    background-color: #812bf1;
     border-radius: 10px;
     font-weight: 600;
     font-size: 1.125rem;
@@ -56,5 +56,5 @@
 }
 
 .container button:hover {
-    background-color: #f44336;
+    background-color: #812bf1;
 }

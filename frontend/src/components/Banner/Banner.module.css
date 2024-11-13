@@ -1,9 +1,9 @@
-.banner{
+.banner {
     width: 100%; /* 1920 x 347 px */
-    height: 150px;
+    height: 375px;
     background-image: url('/public/images/banner3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: right;
     padding-top: 68px;
 }
